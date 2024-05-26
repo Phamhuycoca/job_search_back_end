@@ -1,5 +1,6 @@
 ﻿using job_search_be.Application.IService;
 using job_search_be.Application.Service;
+using job_search_be.Domain.Dto.Email;
 using job_search_be.Infrastructure.Settings;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,14 +17,14 @@ namespace job_search_be.Api.Controllers.Email
             _emailService = emailService;
         }
         [HttpPost("SendMail")]
-        public async Task<IActionResult> SendMail()
+        public async Task<IActionResult> SendMail([FromBody] SendMail send)
         {
             try
             {
                 MailRequest mailrequest = new MailRequest();
                 mailrequest.ToEmail = "phamkhachuy2472@gmail.com";
                 mailrequest.Subject = "Phạm Khắc Huy";
-                mailrequest.Body = GetHtmlcontent();
+                mailrequest.Body = GetHtmlcontent(send);
                 await _emailService.SendEmailAsync(mailrequest);
                 return Ok();
             }
@@ -32,14 +33,14 @@ namespace job_search_be.Api.Controllers.Email
                 throw;
             }
         }
-        private string GetHtmlcontent()
+        private string GetHtmlcontent(SendMail send)
         {
             string Response = "<div style=\"width:100%;background-color:lightblue;text-align:center;margin:10px\">";
-            Response += "<h1>Welcome to Nihira Techiees</h1>";
-            Response += "<img src=\"https://yt3.googleusercontent.com/v5hyLB4am6E0GZ3y-JXVCxT9g8157eSeNggTZKkWRSfq_B12sCCiZmRhZ4JmRop-nMA18D2IPw=s176-c-k-c0x00ffffff-no-rj\" />";
-            Response += "<h2>Thanks for subscribed us</h2>";
-            Response += "<a href=\"https://www.youtube.com/channel/UCsbmVmB_or8sVLLEq4XhE_A/join\">Please join membership by click the link</a>";
-            Response += "<div><h1> Contact us : nihiratechiees@gmail.com</h1></div>";
+            Response += "<h1>"+send.Title+"</h1>";
+            Response += "<img src=\"" + send.LogoCompanny + "\" alt=\"Company Logo\" />";
+            Response += "<h2>"+send.Content+"</h2>";
+            Response += "<a href=\""+send.LinkCompanny+ "\">Please join membership by click the link</a>";
+            Response += "<div><h1> Contact us : "+send.Contact+"</h1></div>";
             Response += "</div>";
             return Response;
         }
