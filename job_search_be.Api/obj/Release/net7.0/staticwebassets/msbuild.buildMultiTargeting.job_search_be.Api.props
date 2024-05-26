@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\job_search_be.Api.props" />
+</Project>

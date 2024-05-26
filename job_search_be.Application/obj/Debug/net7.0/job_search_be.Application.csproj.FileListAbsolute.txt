@@ -1,0 +1,38 @@
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Application.deps.json
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Application.runtimeconfig.json
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Application.dll
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Application.pdb
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.csproj.AssemblyReference.cache
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.AssemblyInfoInputs.cache
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.AssemblyInfo.cs
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.csproj.CoreCompileInputs.cache
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.dll
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\refint\job_search_be.Application.dll
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.pdb
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.genruntimeconfig.cache
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\ref\job_search_be.Application.dll
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Domain.dll
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Domain.pdb
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.csproj.CopyComplete
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Infrastructure.dll
+F:\Đồ án tốt nghiệp\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Infrastructure.pdb
+F:\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Application.deps.json
+F:\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Application.runtimeconfig.json
+F:\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Application.dll
+F:\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Application.pdb
+F:\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Domain.dll
+F:\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Infrastructure.dll
+F:\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Domain.pdb
+F:\job_search_be\job_search_be.Application\bin\Debug\net7.0\job_search_be.Infrastructure.pdb
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.csproj.AssemblyReference.cache
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.AssemblyInfoInputs.cache
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.AssemblyInfo.cs
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.csproj.CoreCompileInputs.cache
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.csproj.CopyComplete
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.dll
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\refint\job_search_be.Application.dll
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.pdb
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\job_search_be.Application.genruntimeconfig.cache
+F:\job_search_be\job_search_be.Application\obj\Debug\net7.0\ref\job_search_be.Application.dll
