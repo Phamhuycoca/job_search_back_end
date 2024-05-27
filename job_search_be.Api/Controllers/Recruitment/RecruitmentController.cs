@@ -128,5 +128,10 @@ namespace job_search_be.Api.Controllers.Recruitment
             }
             return Ok(_recruitmentService.ChangeStatus(changeStatus));
         }
+        [HttpGet("Job_SeekerById/{id}")]
+        public IActionResult Job_SeekerById([FromQuery] CommonQueryByHome query, Guid id)
+        {
+            return Ok(_recruitmentService.Job_SeekerById(query,id));
+        }
     }
 }

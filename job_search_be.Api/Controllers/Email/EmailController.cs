@@ -1,9 +1,11 @@
 ﻿using job_search_be.Application.IService;
 using job_search_be.Application.Service;
 using job_search_be.Domain.Dto.Email;
+using job_search_be.Infrastructure.Exceptions;
 using job_search_be.Infrastructure.Settings;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace job_search_be.Api.Controllers.Email
 {
@@ -19,19 +21,21 @@ namespace job_search_be.Api.Controllers.Email
         [HttpPost("SendMail")]
         public async Task<IActionResult> SendMail([FromBody] SendMail send)
         {
-            try
+            var objId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (objId == null)
+            {
+                throw new ApiException(HttpStatusCode.FORBIDDEN, HttpStatusMessages.Forbidden);
+            }
+            else
             {
                 MailRequest mailrequest = new MailRequest();
-                mailrequest.ToEmail = "phamkhachuy2472@gmail.com";
-                mailrequest.Subject = "Phạm Khắc Huy";
+                mailrequest.ToEmail = send.MailSend;
+                mailrequest.Subject =send.From;
                 mailrequest.Body = GetHtmlcontent(send);
                 await _emailService.SendEmailAsync(mailrequest);
-                return Ok();
+                return Ok(new {message="Đã gửi email thành công", statusCode = 200, success =true});
             }
-            catch (Exception ex)
-            {
-                throw;
-            }
+           
         }
         private string GetHtmlcontent(SendMail send)
         {

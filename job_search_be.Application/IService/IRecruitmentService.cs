@@ -24,6 +24,8 @@ namespace job_search_be.Application.IService
         DataResponse<RecruitmentList> ChangeStatus(RecruitmentChangeStatus changeStatus);
         DataResponse<RecruitmentList> ChangeFeedback(RecruitmentChangeFeedback changeFeedback);
         DataResponse<List<RecruitmentQuery>> ItemsByEmployerId(Guid id);
+        PagedDataResponse<RecruitmentList> Job_SeekerById(CommonQueryByHome commonList, Guid id);
+
 
 
 
