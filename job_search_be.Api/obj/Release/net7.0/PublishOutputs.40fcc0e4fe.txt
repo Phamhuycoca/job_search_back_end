@@ -7,10 +7,12 @@ F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\job_search_be.A
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\AutoMapper.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Azure.Core.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Azure.Identity.dll
+F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\BouncyCastle.Cryptography.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\CloudinaryDotNet.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Google.Apis.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Google.Apis.Auth.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Google.Apis.Core.dll
+F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\MailKit.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\MediatR.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\MediatR.Contracts.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -44,6 +46,7 @@ F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Microsoft.Ident
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Microsoft.OpenApi.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\MimeKit.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Newtonsoft.Json.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\OpenAI_API.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
@@ -52,10 +55,12 @@ F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\Swashbuckle.Asp
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.CodeDom.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Drawing.Common.dll
+F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Formats.Asn1.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Management.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Memory.Data.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Runtime.Caching.dll
+F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Security.Cryptography.Pkcs.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Security.Permissions.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\System.Windows.Extensions.dll
@@ -70,6 +75,7 @@ F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\runtimes\unix\l
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net7.0\System.Management.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\PubTmp\Out\job_search_be.Application.dll

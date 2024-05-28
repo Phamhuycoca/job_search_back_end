@@ -15,5 +15,8 @@ namespace job_search_be.Domain.Dto.Email
         public string? Contact { get; set; }
         public string? LogoCompanny { get; set; }
         public string? LinkCompanny { get; set; }
+        public string? CompannyName { get; set; }
+        public string? Date { get; set; }
+
     }
 }

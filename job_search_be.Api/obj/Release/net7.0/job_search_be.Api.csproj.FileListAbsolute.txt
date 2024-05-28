@@ -105,3 +105,9 @@ F:\job_search_be\job_search_be.Api\obj\Release\net7.0\refint\job_search_be.Api.d
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\job_search_be.Api.pdb
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\job_search_be.Api.genruntimeconfig.cache
 F:\job_search_be\job_search_be.Api\obj\Release\net7.0\ref\job_search_be.Api.dll
+F:\job_search_be\job_search_be.Api\bin\Release\net7.0\BouncyCastle.Cryptography.dll
+F:\job_search_be\job_search_be.Api\bin\Release\net7.0\MailKit.dll
+F:\job_search_be\job_search_be.Api\bin\Release\net7.0\MimeKit.dll
+F:\job_search_be\job_search_be.Api\bin\Release\net7.0\System.Formats.Asn1.dll
+F:\job_search_be\job_search_be.Api\bin\Release\net7.0\System.Security.Cryptography.Pkcs.dll
+F:\job_search_be\job_search_be.Api\bin\Release\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
