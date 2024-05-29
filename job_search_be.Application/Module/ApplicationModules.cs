@@ -43,6 +43,7 @@ namespace job_search_be.Application.Module
             services.AddScoped<IFavouriteJobService, FavouriteJobService>();
             services.AddScoped<INotificationService, NotificationService>();
             services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<NewsService , NewsService>();
             return services;
         }
     }

@@ -502,6 +502,52 @@ namespace job_search_be.Infrastructure.Migrations
                     b.ToTable("Levelworks", (string)null);
                 });
 
+            modelBuilder.Entity("job_search_be.Domain.Entity.News", b =>
+                {
+                    b.Property<Guid>("NewsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("NewsCreate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PathImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("createdAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("createdBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("deletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("deletedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("updatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("updatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("NewsId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("News", (string)null);
+                });
+
             modelBuilder.Entity("job_search_be.Domain.Entity.Notification", b =>
                 {
                     b.Property<Guid>("NotificationId")
@@ -981,6 +1027,16 @@ namespace job_search_be.Infrastructure.Migrations
                     b.Navigation("Profession");
                 });
 
+            modelBuilder.Entity("job_search_be.Domain.Entity.News", b =>
+                {
+                    b.HasOne("job_search_be.Domain.Entity.User", "User")
+                        .WithMany("News")
+                        .HasForeignKey("UserId")
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("job_search_be.Domain.Entity.Notification", b =>
                 {
                     b.HasOne("job_search_be.Domain.Entity.Employers", "Employers")
@@ -1114,6 +1170,8 @@ namespace job_search_be.Infrastructure.Migrations
 
             modelBuilder.Entity("job_search_be.Domain.Entity.User", b =>
                 {
+                    b.Navigation("News");
+
                     b.Navigation("Refresh_Tokens");
                 });
 

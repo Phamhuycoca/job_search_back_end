@@ -21,5 +21,6 @@ namespace job_search_be.Domain.Entity
         public bool? Is_Active { get; set; }
         public Role? Role { get; set; }
         public virtual ICollection<Refresh_Token>? Refresh_Tokens { get; set; }
+        public virtual ICollection<News>? News { get; set; }
     }
 }

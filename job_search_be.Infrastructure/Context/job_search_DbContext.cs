@@ -30,6 +30,7 @@ namespace job_search_be.Infrastructure.Context
         public virtual DbSet<FileCv> FileCvs { get; set; }
         public virtual DbSet<Favoufite_Job> Favoufite_Jobs {  get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
+        public virtual DbSet<News> News { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -152,7 +153,14 @@ namespace job_search_be.Infrastructure.Context
                 e.HasOne(e => e.Employers).WithMany(e => e.Notifications).HasForeignKey(e => e.EmployersId).OnDelete(DeleteBehavior.ClientSetNull);
                 e.HasOne(e => e.Job).WithMany(e => e.Notifications).HasForeignKey(e => e.JobId).OnDelete(DeleteBehavior.ClientSetNull);
             });
-         
+
+            modelBuilder.Entity<News>(e =>
+            {
+                e.ToTable("News");
+                e.HasKey(e => e.NewsId);
+                e.HasOne(e => e.User).WithMany(e => e.News).HasForeignKey(e => e.UserId).OnDelete(DeleteBehavior.ClientSetNull);
+
+            });
         }
     }
 }

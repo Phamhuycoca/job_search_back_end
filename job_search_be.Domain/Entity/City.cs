@@ -11,8 +11,8 @@ namespace job_search_be.Domain.Entity
     {
         public Guid CityId { get; set; }
         public string? CityName { get; set; }     
-        public ICollection<Employers>? Employers { get; set; }
         public ICollection<Job>? Jobs { get; set; }
+        public ICollection<Employers>? Employers { get; set; }
 
     }
 }

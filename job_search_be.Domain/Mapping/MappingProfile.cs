@@ -8,6 +8,7 @@ using job_search_be.Domain.Dto.Formofwork;
 using job_search_be.Domain.Dto.Job;
 using job_search_be.Domain.Dto.Job_Seeker;
 using job_search_be.Domain.Dto.Levelwork;
+using job_search_be.Domain.Dto.News;
 using job_search_be.Domain.Dto.Notification;
 using job_search_be.Domain.Dto.Permission;
 using job_search_be.Domain.Dto.Profession;
@@ -98,6 +99,9 @@ namespace job_search_be.Domain.Mapping
 
             CreateMap<Notification, NotificationDto>().ReverseMap();
             CreateMap<Notification, NotificationQuery>().ReverseMap();
+
+            CreateMap<News, NewsDto>().ReverseMap();
+            CreateMap<News, NewsQuery>().ReverseMap();
 
         }
     }
