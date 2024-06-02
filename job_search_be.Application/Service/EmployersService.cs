@@ -8,6 +8,7 @@ using job_search_be.Domain.Dto.City;
 using job_search_be.Domain.Dto.Dashboard_Employers;
 using job_search_be.Domain.Dto.Employers;
 using job_search_be.Domain.Dto.Job;
+using job_search_be.Domain.Dto.Job_Seeker;
 using job_search_be.Domain.Entity;
 using job_search_be.Domain.Repositories;
 using job_search_be.Infrastructure.Exceptions;
@@ -440,6 +441,29 @@ namespace job_search_be.Application.Service
             };
             return new DataResponse<Dashboard_Employers>(dash, 200, "Success");
 
+        }
+
+        public DataResponse<EmployerRegister> Register(EmployerRegister dto)
+        {
+            var check = _employersRepository.GetAllData().Where(x => x.Email == dto.Email).FirstOrDefault();
+            if (check != null)
+            {
+                throw new ApiException(401, "Tài khoản đã tồn tại");
+            }
+            var dataObj = new Employers()
+            {
+                Email = dto.Email,
+                Password = PasswordHelper.CreateHashedPassword(dto.Password),
+                CompanyName = dto.CompanyName,
+                Role= "Employer",
+                CompanyLogo = "https://res.cloudinary.com/drhdgw1xx/image/upload/v1709880283/m76gmmyuzzv3phiyuy2u.jpg"
+            };
+            var newData = _employersRepository.Create(dataObj);
+            if (newData != null)
+            {
+                return new DataResponse<EmployerRegister>(_mapper.Map<EmployerRegister>(newData), HttpStatusCode.OK, "Đăng ký tài khoản thành công, vui lòng đăng nhập.");
+            }
+            throw new ApiException(HttpStatusCode.BAD_REQUEST, "Đăng ký thất bại");
         }
     }
 }

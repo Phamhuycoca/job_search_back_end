@@ -63,6 +63,7 @@ namespace job_search_be.Domain.Mapping
             CreateMap<City, CityDto>().ReverseMap();
             CreateMap<City, CityQuery>().ReverseMap();
 
+            CreateMap<Employers, EmployerRegister>().ReverseMap();
             CreateMap<Employers, EmployersDto>().ReverseMap();
             CreateMap<Employers, EmployersUpdateDto>().ReverseMap();
             CreateMap<Employers, EmployersQuery>().ReverseMap();

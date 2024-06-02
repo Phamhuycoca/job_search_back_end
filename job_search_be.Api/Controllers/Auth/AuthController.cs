@@ -110,5 +110,10 @@ namespace job_search_be.Api.Controllers.Auth
         {
             return Ok(_jobService.Register(dto));
         }
+        [HttpPost("EmployerRegister")]
+        public IActionResult EmployerRegister(EmployerRegister dto)
+        {
+            return Ok(_employersService.Register(dto));
+        }
     }
 }
