@@ -5,6 +5,7 @@ using job_search_be.Application.IService;
 using job_search_be.Application.Wrappers.Concrete;
 using job_search_be.Domain.Dto.Auth;
 using job_search_be.Domain.Dto.City;
+using job_search_be.Domain.Dto.Dashboard_Employers;
 using job_search_be.Domain.Dto.Employers;
 using job_search_be.Domain.Dto.Job;
 using job_search_be.Domain.Entity;
@@ -40,6 +41,7 @@ namespace job_search_be.Application.Service
         private readonly IProfessionRepository _professionRepository;
         private readonly ISalaryRepository _aryRepository;
         private readonly IWorkexperienceRepository _workexperienceRepository;
+        private readonly IRecruitmentRepository _recruitmentRepository;
 
         public EmployersService(IEmployersRepository employersRepository,
             IMapper mapper, 
@@ -52,8 +54,8 @@ namespace job_search_be.Application.Service
             IProfessionRepository professionRepository,
             ISalaryRepository aryRepository,
             IWorkexperienceRepository workexperienceRepository,
-            IJobRepository jobRepository
-            )
+            IJobRepository jobRepository,
+            IRecruitmentRepository recruitmentRepository)
         {
             _employersRepository = employersRepository;
             _mapper = mapper;
@@ -68,6 +70,7 @@ namespace job_search_be.Application.Service
             _workexperienceRepository = workexperienceRepository;
             _employersRepository = employersRepository;
             _jobRepository = jobRepository;
+            _recruitmentRepository = recruitmentRepository;
         }
         public DataResponse<EmployersQuery> Create(EmployersDto dto)
         {
@@ -424,6 +427,19 @@ namespace job_search_be.Application.Service
                 result.View = item.View + 1;
             }
             var newData = _employersRepository.Update(_mapper.Map(result, item));
+        }
+
+        public DataResponse<Dashboard_Employers> Dashboard(Guid id)
+        {
+            var dash = new Dashboard_Employers()
+            {
+                TongSoBaiDang = _jobRepository.GetAllData().Where(x => x.EmployersId == id).Count(),
+                TongSoCVChuaDuyet=_recruitmentRepository.GetAllData().Where(x=>x.EmployersId==id&&x.IsStatus==false).Count(),
+                TongSoNguoiUngTuyen=_recruitmentRepository.GetAllData().Where(x=>x.EmployersId==id).Count(),
+                TongSoNguoiDaGuiEmail= _recruitmentRepository.GetAllData().Where(x => x.EmployersId == id && x.IsStatus == true).Count()
+            };
+            return new DataResponse<Dashboard_Employers>(dash, 200, "Success");
+
         }
     }
 }

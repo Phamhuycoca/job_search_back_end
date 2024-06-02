@@ -87,5 +87,16 @@ namespace job_search_be.Api.Controllers.Employers
         {
             return Ok(_employersService.CompannyList(query));
         }
+        [HttpGet("Dashboard")] 
+        public IActionResult Dashboard()
+        {
+            var objId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (objId == null)
+            {
+                throw new ApiException(HttpStatusCode.FORBIDDEN, HttpStatusMessages.Forbidden);
+            }
+            return Ok(_employersService.Dashboard(Guid.Parse(objId)));
+
+        }
     }
 }

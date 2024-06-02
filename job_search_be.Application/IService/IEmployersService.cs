@@ -1,6 +1,7 @@
 ﻿using job_search_be.Application.Helpers;
 using job_search_be.Application.Wrappers.Concrete;
 using job_search_be.Domain.Dto.Auth;
+using job_search_be.Domain.Dto.Dashboard_Employers;
 using job_search_be.Domain.Dto.Employers;
 using job_search_be.Domain.Dto.Formofwork;
 using job_search_be.Domain.Dto.Job;
@@ -27,6 +28,8 @@ namespace job_search_be.Application.IService
         DataResponse<TokenDto> Refresh_Token(RefreshTokenSettings token);
         PagedDataResponse<JobQueries> GetListJobById(CommonListQuery commonList,Guid id);
         //DataResponse<CompannyView> GetCompannyView(Guid id);
+        DataResponse<Dashboard_Employers> Dashboard(Guid id);
+
 
     }
 }
