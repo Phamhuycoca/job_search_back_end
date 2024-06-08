@@ -10,6 +10,7 @@ namespace job_search_be.Domain.Repositories
     public interface IGenericRepository<T> where T : BaseEntity
     {
         List<T> GetAllData();
+        List<T> GetAllDataByEmployer();
         T GetById(Guid id);
         T Create(T entity);
         T Update(T entity);

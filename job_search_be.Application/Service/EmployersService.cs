@@ -465,6 +465,17 @@ namespace job_search_be.Application.Service
             }
             throw new ApiException(HttpStatusCode.BAD_REQUEST, "Đăng ký thất bại");
         }
+
+        public PagedDataResponse<Employers> Admin_Employers(CommonListQuery commonList)
+        {
+            var query = _employersRepository.GetAllDataByEmployer();
+            if (!string.IsNullOrEmpty(commonList.keyword))
+            {
+                query = query.Where(x => x.CompanyName.Contains(commonList.keyword)).ToList();
+            }
+            var paginatedResult = PaginatedList<Employers>.ToPageList(query, commonList.page, commonList.limit);
+            return new PagedDataResponse<Employers>(paginatedResult, 200, query.Count());
+        }
     }
 }
  

@@ -22,6 +22,38 @@ namespace job_search_be.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("job_search_be.Domain.Entity.Banner", b =>
+                {
+                    b.Property<Guid>("BannerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BannerPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("createdAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("createdBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("deletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("deletedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("updatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("updatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("BannerId");
+
+                    b.ToTable("Banners", (string)null);
+                });
+
             modelBuilder.Entity("job_search_be.Domain.Entity.City", b =>
                 {
                     b.Property<Guid>("CityId")

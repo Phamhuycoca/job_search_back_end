@@ -31,6 +31,7 @@ namespace job_search_be.Infrastructure.Context
         public virtual DbSet<Favoufite_Job> Favoufite_Jobs {  get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<Banner> Banners { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -39,6 +40,11 @@ namespace job_search_be.Infrastructure.Context
             {
                 e.ToTable("Permissions");
                 e.HasKey(e => e.PermissionId);
+            });
+            modelBuilder.Entity<Banner>(e =>
+            {
+                e.ToTable("Banners");
+                e.HasKey(e => e.BannerId);
             });
             modelBuilder.Entity<Role>(e =>{
                 e.ToTable("Roles");

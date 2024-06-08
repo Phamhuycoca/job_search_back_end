@@ -6,6 +6,7 @@ using job_search_be.Domain.Dto.Employers;
 using job_search_be.Domain.Dto.Formofwork;
 using job_search_be.Domain.Dto.Job;
 using job_search_be.Domain.Dto.Job_Seeker;
+using job_search_be.Domain.Entity;
 using job_search_be.Infrastructure.Settings;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace job_search_be.Application.IService
         //DataResponse<CompannyView> GetCompannyView(Guid id);
         DataResponse<Dashboard_Employers> Dashboard(Guid id);
         DataResponse<EmployerRegister> Register(EmployerRegister dto);
+        PagedDataResponse<Employers> Admin_Employers(CommonListQuery commonList);
 
 
 

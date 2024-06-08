@@ -21,6 +21,10 @@ namespace job_search_be.Infrastructure.Repositories
             _dbSet = _context.Set<T>();
         }
         DateTime now = DateTime.Now;
+        public List<T> GetAllDataByEmployer()
+        {
+            return _dbSet.Where(x => x.deletedAt != null).OrderByDescending(x => x.createdAt).ToList();
+        }
         public List<T> GetAllData()
         {
             return _dbSet.Where(x => x.deletedAt == null).OrderByDescending(x => x.createdAt).ToList();
