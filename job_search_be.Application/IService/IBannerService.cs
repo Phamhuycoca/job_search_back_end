@@ -16,5 +16,7 @@ namespace job_search_be.Application.IService
         DataResponse<BannerQuery> Create(BannerDto dto);
         DataResponse<BannerQuery> Update(BannerDto dto);
         DataResponse<BannerQuery> Delete(Guid id);
+        DataResponse<BannerQuery> GetById(Guid id);
+
     }
 }

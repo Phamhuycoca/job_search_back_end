@@ -29,22 +29,13 @@ namespace job_search_be.Api.Controllers.Banner
         [HttpPost]
         public IActionResult Create([FromForm] BannerDto dto)
         {
-            var objId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (objId == null)
-            {
-                throw new ApiException(HttpStatusCode.FORBIDDEN, HttpStatusMessages.Forbidden);
-            }
+           
             return Ok(_bannerService.Create(dto));
         }
 
         [HttpPatch("{id}")]
         public IActionResult Update([FromForm] BannerDto dto)
         {
-            var objId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (objId == null)
-            {
-                throw new ApiException(HttpStatusCode.FORBIDDEN, HttpStatusMessages.Forbidden);
-            }
             return Ok(_bannerService.Update(dto));
         }
 
@@ -52,6 +43,11 @@ namespace job_search_be.Api.Controllers.Banner
         public IActionResult Delete(Guid id)
         {
             return Ok(_bannerService?.Delete(id));
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            return Ok(_bannerService.GetById(id));
         }
     }
 }

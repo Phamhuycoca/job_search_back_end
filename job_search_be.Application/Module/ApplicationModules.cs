@@ -44,6 +44,7 @@ namespace job_search_be.Application.Module
             services.AddScoped<INotificationService, NotificationService>();
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<INewsService , NewsService>();
+            services.AddTransient<IBannerService, BannerService>();
             return services;
         }
     }

@@ -25,7 +25,8 @@ namespace job_search_be.Application.Helpers
                     var uploadParams = new ImageUploadParams
                     {
                         File = new FileDescription(hinhAnh.FileName, stream),
-                        Transformation = new Transformation().Width(500).Height(500).Crop("fill"),
+                        //Transformation = new Transformation().Width(500).Height(500).Crop("fill"),
+                        Transformation = new Transformation().Crop("fill"),
                         //Transformation = new Transformation().Width(500).Height(500),
                     };
 

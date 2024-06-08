@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using job_search_be.Domain.Dto.Auth;
+using job_search_be.Domain.Dto.Banner;
 using job_search_be.Domain.Dto.City;
 using job_search_be.Domain.Dto.Employers;
 using job_search_be.Domain.Dto.Favourite;
@@ -103,6 +104,9 @@ namespace job_search_be.Domain.Mapping
 
             CreateMap<News, NewsDto>().ReverseMap();
             CreateMap<News, NewsQuery>().ReverseMap();
+
+            CreateMap<Banner, BannerDto>().ReverseMap();
+            CreateMap<Banner, BannerQuery>().ReverseMap();
 
         }
     }

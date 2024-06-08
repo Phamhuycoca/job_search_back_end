@@ -4,6 +4,7 @@ using job_search_be.Application.Helpers;
 using job_search_be.Application.IService;
 using job_search_be.Application.Wrappers.Concrete;
 using job_search_be.Domain.Dto.Banner;
+using job_search_be.Domain.Dto.City;
 using job_search_be.Domain.Dto.News;
 using job_search_be.Domain.Entity;
 using job_search_be.Domain.Repositories;
@@ -51,6 +52,21 @@ namespace job_search_be.Application.Service
         }
 
         public DataResponse<BannerQuery> Delete(Guid id)
+        {
+            var item = _bannerRepository.GetById(id);
+            if (item == null)
+            {
+                throw new ApiException(HttpStatusCode.ITEM_NOT_FOUND, HttpStatusMessages.NotFound);
+            }
+            var data = _bannerRepository.Delete(id);
+            if (data != null)
+            {
+                return new DataResponse<BannerQuery>(_mapper.Map<BannerQuery>(item), HttpStatusCode.OK, HttpStatusMessages.DeletedSuccessfully);
+            }
+            throw new ApiException(HttpStatusCode.BAD_REQUEST, HttpStatusMessages.DeletedError);
+        }
+
+        public DataResponse<BannerQuery> GetById(Guid id)
         {
             var item = _bannerRepository.GetById(id);
             if (item == null)
