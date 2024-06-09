@@ -33,6 +33,7 @@ namespace job_search_be.Application.IService
         DataResponse<Dashboard_Employers> Dashboard(Guid id);
         DataResponse<EmployerRegister> Register(EmployerRegister dto);
         PagedDataResponse<Employers> Admin_Employers(CommonListQuery commonList);
+        PagedDataResponse<Employers> Employers(CommonListQuery commonList);
 
 
 

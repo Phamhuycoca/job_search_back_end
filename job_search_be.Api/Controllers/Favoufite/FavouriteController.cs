@@ -54,5 +54,15 @@ namespace job_search_be.Api.Controllers.Favoufite
             return Ok(_favouriteJobService.Favourite(favourite));
             //return Ok(dto);
         }
+        [HttpGet]
+        public IActionResult Favourite_Jobss([FromQuery] CommonListQuery commonListQuery)
+        {
+            var objId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (objId == null)
+            {
+                throw new ApiException(HttpStatusCode.FORBIDDEN, HttpStatusMessages.Forbidden);
+            }
+            return Ok(_favouriteJobService.Items(commonListQuery, Guid.Parse(objId)));
+        }
     }
 }

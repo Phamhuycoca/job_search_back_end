@@ -18,6 +18,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -456,8 +457,9 @@ namespace job_search_be.Application.Service
                 Password = PasswordHelper.CreateHashedPassword(dto.Password),
                 CompanyName = dto.CompanyName,
                 Role= "Employer",
-                CompanyLogo = "https://res.cloudinary.com/drhdgw1xx/image/upload/v1709880283/m76gmmyuzzv3phiyuy2u.jpg"
-            };
+                CompanyLogo = "https://res.cloudinary.com/drhdgw1xx/image/upload/v1709880283/m76gmmyuzzv3phiyuy2u.jpg",
+                deletedAt = DateTime.Now
+        };
             var newData = _employersRepository.Create(dataObj);
             if (newData != null)
             {
@@ -469,6 +471,17 @@ namespace job_search_be.Application.Service
         public PagedDataResponse<Employers> Admin_Employers(CommonListQuery commonList)
         {
             var query = _employersRepository.GetAllDataByEmployer();
+            if (!string.IsNullOrEmpty(commonList.keyword))
+            {
+                query = query.Where(x => x.CompanyName.Contains(commonList.keyword)).ToList();
+            }
+            var paginatedResult = PaginatedList<Employers>.ToPageList(query, commonList.page, commonList.limit);
+            return new PagedDataResponse<Employers>(paginatedResult, 200, query.Count());
+        }
+
+        public PagedDataResponse<Employers> Employers(CommonListQuery commonList)
+        {
+            var query = _mapper.Map<List<Employers>>(_employersRepository.GetAllData());
             if (!string.IsNullOrEmpty(commonList.keyword))
             {
                 query = query.Where(x => x.CompanyName.Contains(commonList.keyword)).ToList();

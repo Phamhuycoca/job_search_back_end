@@ -102,7 +102,7 @@ namespace job_search_be.Application.Service
             }
             if (dto.cv != null)
             {
-                if(item.Job_Cv != null ||item.Job_Cv=="string")
+                /*if(item.Job_Cv != null ||item.Job_Cv=="string")
                 {
                     string[] path = item.Job_Cv.Split(url);
                     if (!string.IsNullOrEmpty(path[1]))
@@ -110,7 +110,7 @@ namespace job_search_be.Application.Service
                         FileUploadService.DeletePDF(path[1]);
                     }
                     FileUploadService.DeletePDF(item.Job_Cv);
-                }
+                }*/
                 dto.Job_Cv =url+ FileUploadService.CreatePDF(dto.cv);
             }
             if(dto.avt != null )
@@ -140,7 +140,7 @@ namespace job_search_be.Application.Service
 
         public DataResponse<TokenDto> Login(Job_Seeker_Login dto)
         {
-            var user = _job_SeekerRepository.GetAllData().Where(x => x.Email == dto.Email).SingleOrDefault();
+            var user = _job_SeekerRepository.GetAllData().Where(x => x.Email == dto.Email).FirstOrDefault();
             if (user == null)
             {
                 throw new ApiException(401, "Tài khoản không tồn tại");

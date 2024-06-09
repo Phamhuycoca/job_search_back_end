@@ -24,6 +24,11 @@ namespace job_search_be.Api.Controllers.Admin_Employer
         {
             return Ok(_employersService.Admin_Employers(commonListQuery));
         }
+        [HttpGet("Employers")]
+        public IActionResult Indexs([FromQuery] CommonListQuery commonListQuery)
+        {
+            return Ok(_employersService.Employers(commonListQuery));
+        }
         [HttpPatch("{id}")]
         public IActionResult Update(Guid id)
         {
