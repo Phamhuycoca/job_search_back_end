@@ -1,6 +1,7 @@
 ﻿using job_search_be.Application.Helpers;
 using job_search_be.Application.IService;
 using job_search_be.Domain.Dto.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,7 +40,7 @@ namespace job_search_be.Api.Controllers.User
         {
             return Ok(_userService?.Delete(id));
         }
-
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {

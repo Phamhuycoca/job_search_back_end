@@ -95,6 +95,7 @@ namespace job_search_be.Api.Controllers.Auth
             HttpContext.User = null;
             return Ok(new { success = true, data = "", statusCode = 200, message="Đăng xuất thành công" });
         }
+        [Authorize]
         [HttpGet("GetProfileJob_Seeker")]
         public IActionResult GetProfileJob_Seeker()
         {
