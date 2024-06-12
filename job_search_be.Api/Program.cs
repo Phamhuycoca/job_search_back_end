@@ -3,6 +3,7 @@ using job_search_be.Api.Hubs;
 using job_search_be.Api.Infrastructure.Extensions;
 using job_search_be.Application.Helpers;
 using job_search_be.Application.Module;
+using job_search_be.Domain.Entity;
 using job_search_be.Infrastructure.Context;
 using job_search_be.Infrastructure.Exceptions;
 using job_search_be.Infrastructure.Settings;
@@ -93,6 +94,7 @@ var cloudinaryAccount = new Account(
 var cloudinary = new Cloudinary(cloudinaryAccount);
 builder.Services.AddSingleton(cloudinary);
 var app = builder.Build();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
